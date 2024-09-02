@@ -1,0 +1,33 @@
+@startuml Replenishment create to-be
+autonumber
+hide unlinked
+!pragma teoz true
+!$Msg = "200 Ok"
+!$CheckAndLock = "NEW ~/POST Аренда(lock) логистического контейнера под GUT"
+!$Lozon_Lock = "NEW ХП ~LockIdForGut"
+!$pr_insert_bc = "NEW ~Insert Barcode"
+!$ba_insert_bc = "NEW ~Insert Barcode"
+!$cpgw_check_bt = "NEW ~CheckBoxTareAndLockGut"
+box Склад #LightGreen
+participant whc order 5
+participant wms_ms as "wms_svc_megasort" order 10
+end box
+participant son order 15
+queue k as "kafka" order 20
+control inv as "inventory" order 25
+box Логистика #LightSkyBlue
+participant sc as "lssms-sorting-calculator" order 30
+participant cpgw as "container-processor-gw" order 40
+participant pu as "lssrt-pandora-updater" order 42
+participant pr as "lssrt-pandora-resolver" order 44
+participant cc as "container-creator" order 46
+participant ps as "lssrt-pastore" order 46
+participant ba as "lssrt-barcode-api" order 48
+participant cm as "~container-manager" order 50
+participant cb as "lssrt-container-broker" order 60
+participant b as "bosco-api" order 65
+participant cf as "central_facade" order 70
+database l as "lozon" order 80
+end box
+
+@enduml
