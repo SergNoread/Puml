@@ -18,6 +18,7 @@ control inv as "inventory" order 25
 box Логистика #LightSkyBlue
 participant sc as "lssms-sorting-calculator" order 30
 participant cpgw as "container-processor-gw" order 40
+participant hs as "lms-csharp-api-hand-sorting" order 41
 participant pu as "lssrt-pandora-updater" order 42
 participant pr as "lssrt-pandora-resolver" order 44
 participant cc as "container-creator" order 46
