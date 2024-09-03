@@ -8,6 +8,7 @@ hide unlinked
 !$pr_insert_bc = "NEW ~Insert Barcode"
 !$ba_insert_bc = "NEW ~Insert Barcode"
 !$cpgw_check_bt = "NEW ~CheckBoxTareAndLockGut"
+!$hs_check_bt = "NEW ~StartFormBoxTareVx"
 box Склад #LightGreen
 participant whc order 5
 participant wms_ms as "wms_svc_megasort" order 10
